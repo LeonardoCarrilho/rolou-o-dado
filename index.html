@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolou o Dado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1 id="resultado">Rolou o Dado!</h1>
+    <div class="placar">
+      <span>Jogador 1: <strong id="pontos-1">0</strong></span>
+      <span>Empates: <strong id="empates">0</strong></span>
+      <span>Jogador 2: <strong id="pontos-2">0</strong></span>
+    </div>
+    <div class="dados">
+      <div class="dado">
+        <h2>Jogador 1</h2>
+        <img src="img/dice6.svg" alt="Dado do jogador 1">
+      </div>
+      <div class="dado">
+        <h2>Jogador 2</h2>
+        <img src="img/dice6.svg" alt="Dado do jogador 2">
+      </div>
+    </div>
+    <button id="rolar" type="button">🎲 Rolar os dados</button>
+  </main>
+  <footer>Feito por Leonardo Carrilho</footer>
+  <script src="app.js"></script>
+</body>
+</html>

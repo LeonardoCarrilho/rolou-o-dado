@@ -1,0 +1,34 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: #393b44;
+  color: #fff;
+  font-family: "Indie Flower", cursive;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px 16px;
+}
+.container { width: min(100%, 720px); text-align: center; }
+h1 {
+  margin: 24px 0;
+  font-family: "Lobster", cursive;
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  color: #aecca3;
+  text-shadow: 5px 0 #232931;
+  min-height: 1.3em;
+}
+.placar { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 1.3rem; margin-bottom: 24px; }
+.placar strong { color: #f4b860; }
+.dados { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.dado h2 { font-size: 2rem; color: #4ecca3; margin-bottom: 12px; }
+.dado img { width: min(40vw, 220px); transition: transform .4s; }
+.dado img.rolando { transform: rotate(360deg) scale(.9); }
+.dado.vencedor img { filter: drop-shadow(0 0 18px #f4b860); }
+button {
+  margin-top: 32px; padding: 14px 32px;
+  font: inherit; font-size: 1.5rem;
+  color: #232931; background: #4ecca3;
+  border: none; border-radius: 12px; cursor: pointer;
+}
+button:hover { background: #aecca3; }
+button:disabled { opacity: .6; cursor: wait; }
+footer { margin-top: 40px; color: #aaa; }
