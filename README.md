@@ -2,6 +2,8 @@
 
 Jogo de dados para dois jogadores feito com **HTML5, CSS3 e JavaScript puro**, manipulando o DOM.
 
+🔗 **Ao vivo:** https://leonardocarrilho.github.io/rolou-o-dado/
+
 Cada jogador rola um dado; quem tirar o maior número vence a rodada. Um placar acompanha vitórias e empates.
 
 ## Funcionalidades
