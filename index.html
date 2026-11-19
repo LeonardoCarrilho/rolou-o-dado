@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rolou o Dado</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,9 +27,13 @@
         <img src="img/dice6.svg" alt="Dado do jogador 2">
       </div>
     </div>
-    <button id="rolar" type="button">🎲 Rolar os dados</button>
+    <button id="rolar" type="button">Rolar os dados</button>
+    <section class="rodadas" aria-label="Últimas rodadas">
+      <h3>Últimas rodadas</h3>
+      <ol id="rodadas"></ol>
+    </section>
   </main>
-  <footer>Feito por Leonardo Carrilho</footer>
+  <footer>Feito por Leonardo Carrilho com HTML, CSS e JavaScript.</footer>
   <script src="app.js"></script>
 </body>
 </html>

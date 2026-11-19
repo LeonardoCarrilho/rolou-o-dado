@@ -1,34 +1,65 @@
+/* Identidade "mesa de jogo": feltro verde suave, borda de madeira e dados de marfim. */
+:root {
+  --feltro: #4d7a64;
+  --feltro-escuro: #3b6150;
+  --madeira: #8a6a4f;
+  --marfim: #fbf6ea;
+  --dourado: #e6c27a;
+  --texto: #f4f1e8;
+  --suave: #cfe0d6;
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   min-height: 100vh;
-  background: #393b44;
-  color: #fff;
-  font-family: "Indie Flower", cursive;
+  background: #2f3a34;
+  color: var(--texto);
+  font-family: "Nunito", system-ui, sans-serif;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   padding: 24px 16px;
 }
-.container { width: min(100%, 720px); text-align: center; }
+.container {
+  width: min(100%, 760px); text-align: center;
+  padding: clamp(24px, 5vw, 44px);
+  border-radius: 36px;
+  background: radial-gradient(ellipse at center, var(--feltro) 40%, var(--feltro-escuro) 100%);
+  border: 14px solid var(--madeira);
+  box-shadow: inset 0 0 40px #0003, 0 20px 40px -20px #000a;
+}
 h1 {
-  margin: 24px 0;
-  font-family: "Lobster", cursive;
-  font-size: clamp(2.4rem, 8vw, 5rem);
-  color: #aecca3;
-  text-shadow: 5px 0 #232931;
-  min-height: 1.3em;
+  margin: 0 0 18px;
+  font-family: "DM Serif Display", Georgia, serif; font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 4rem); line-height: 1.1;
+  color: var(--texto);
+  min-height: 1.2em;
 }
-.placar { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 1.3rem; margin-bottom: 24px; }
-.placar strong { color: #f4b860; }
-.dados { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
-.dado h2 { font-size: 2rem; color: #4ecca3; margin-bottom: 12px; }
-.dado img { width: min(40vw, 220px); transition: transform .4s; }
-.dado img.rolando { transform: rotate(360deg) scale(.9); }
-.dado.vencedor img { filter: drop-shadow(0 0 18px #f4b860); }
+.placar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+.placar span { background: #0000001f; padding: 6px 16px; border-radius: 999px; color: var(--suave); }
+.placar strong { color: var(--dourado); font-size: 1.15rem; }
+.dados { display: flex; justify-content: center; gap: clamp(24px, 8vw, 72px); flex-wrap: wrap; }
+.dado h2 { font-size: 1.15rem; font-weight: 700; color: var(--suave); margin-bottom: 14px; }
+.dado img {
+  width: min(34vw, 170px);
+  filter: drop-shadow(6px 10px 6px #0000004d);
+  transform: rotate(var(--giro, -6deg));
+  transition: transform .45s cubic-bezier(.3, 1.4, .5, 1);
+}
+.dado:nth-child(2) img { --giro: 7deg; }
+.dado img.rolando { transform: rotate(320deg) scale(.85); }
+.dado.vencedor h2 { color: var(--dourado); }
+.dado.vencedor img { filter: drop-shadow(6px 10px 6px #0000004d) drop-shadow(0 0 14px #e6c27a99); }
 button {
-  margin-top: 32px; padding: 14px 32px;
-  font: inherit; font-size: 1.5rem;
-  color: #232931; background: #4ecca3;
-  border: none; border-radius: 12px; cursor: pointer;
+  margin-top: 34px; padding: 14px 34px;
+  font: inherit; font-weight: 800; font-size: 1.15rem;
+  color: #2f3a34; background: var(--dourado);
+  border: none; border-radius: 999px; cursor: pointer;
+  box-shadow: 0 4px 0 #b8975a;
 }
-button:hover { background: #aecca3; }
-button:disabled { opacity: .6; cursor: wait; }
-footer { margin-top: 40px; color: #aaa; }
+button:active { transform: translateY(3px); box-shadow: 0 1px 0 #b8975a; }
+button:focus-visible { outline: 3px solid var(--texto); outline-offset: 3px; }
+button:disabled { opacity: .7; cursor: wait; }
+.rodadas { margin-top: 28px; }
+.rodadas h3 { font-size: .95rem; font-weight: 700; color: var(--suave); margin-bottom: 8px; }
+.rodadas ol { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.rodadas li { background: #00000026; border-radius: 8px; padding: 4px 10px; font-size: .9rem; color: var(--texto); }
+footer { margin-top: 28px; color: #b8c4bc; font-size: .9rem; }
+@media (prefers-reduced-motion: reduce) { .dado img { transition: none; } }
